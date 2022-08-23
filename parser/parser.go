@@ -83,6 +83,9 @@ func (p *Parser) peekTokenIs(t token.TokenType) bool {
 	return p.peekToken.Type == t
 }
 
+// expectPeek is an assertion method. It checks that the next token is of the
+// expected type and if it is it advances the parser to the next token and
+// returns true.
 func (p *Parser) expectPeek(t token.TokenType) bool {
 	if p.peekTokenIs(t) {
 		p.nextToken()
